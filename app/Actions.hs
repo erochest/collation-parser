@@ -8,11 +8,11 @@ module Actions where
 
 import           Control.Error
 
-import           CollationParser.Actions.Default
+import           CollationParser.Actions.Parse
 
 import           Types
 
 
 action :: Actions -> Script ()
 
-action Default{..} = defaultAction defaultInput defaultOutput
+action Parse{..} = parseAction defaultInput defaultOutput

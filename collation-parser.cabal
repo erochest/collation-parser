@@ -7,16 +7,16 @@ license-file:        LICENSE
 author:              Eric Rochester
 maintainer:          erochest@gmail.com
 -- copyright:           2016 Eric Rochester
--- category:            
+-- category:
 build-type:          Simple
--- extra-source-files:  
+-- extra-source-files:
 cabal-version:       >=1.10
 
 library
-  exposed-modules:     CollationParser.Actions.Default
+  exposed-modules:     CollationParser.Actions.Parse
                      , CollationParser.Types
-  -- other-modules:       
-  -- other-extensions:    
+  -- other-modules:
+  -- other-extensions:
   build-depends:       base >=4.8 && <4.9
                      , errors
                      , lens
@@ -30,7 +30,7 @@ executable collation-parser
   other-modules:       Actions
                      , Opts
                      , Types
-  -- other-extensions:    
+  -- other-extensions:
   build-depends:       base >=4.8 && <5
                      , collation-parser
                      , errors
@@ -68,7 +68,7 @@ benchmark collation-parser-bench
                        -rtsopts
   hs-source-dirs:      bench
   main-is:             Bench.hs
-  -- other-modules:         
+  -- other-modules:
   build-depends:         base
                        , collation-parser
                        , criterion
