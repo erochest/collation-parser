@@ -11,6 +11,6 @@ import           Test.Hspec
 
 spec :: Spec
 spec = do
-    describe "CollationParser" $
-       it "should have tests." $
-           pending
+    describe "CollationParser" $ do
+        it "should have tests." $ do
+            pending

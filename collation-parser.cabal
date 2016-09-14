@@ -19,7 +19,6 @@ library
   -- other-extensions:
   build-depends:       base >=4.8 && <4.9
                      , errors
-                     , lens
                      , text
                      , text-format
   hs-source-dirs:      src
@@ -54,7 +53,6 @@ test-suite collation-parser-specs
   build-depends:         base
                        , collation-parser
                        , errors
-                       , lens
                        , text
                        , QuickCheck
                        , smallcheck

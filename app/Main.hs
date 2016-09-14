@@ -11,4 +11,6 @@ import           Opts
 
 
 main :: IO ()
-main = runScript . action =<< parseOpts
+main = do
+    opt <- parseOpts
+    runScript (action opt)
