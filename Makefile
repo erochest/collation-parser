@@ -61,7 +61,7 @@ watch:
 	stack build --file-watch --fast --pedantic
 
 watch-test:
-	stack test --file-watch --pedantic # --test-arguments "-m TODO"
+	stack build --file-watch --pedantic --exec "make test"
 
 restart: distclean init build
 
