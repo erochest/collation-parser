@@ -10,13 +10,24 @@ import qualified Data.Text    as T
 import           GHC.Generics hiding (to)
 
 
+data Format
+    = Quarto
+    | Octavo
+    deriving (Show, Eq, Data, Typeable, Generic)
+
+data CollationParagraph
+    = CP
+    { cpFormat    :: !Format
+    , cpSequences :: ![Sequence]
+    } deriving (Show, Eq, Data, Typeable, Generic)
+
 data SeqNo
     = SeqNo !Int
     | Pi
     | Chi
     deriving (Show, Eq, Data, Typeable, Generic)
 
-data Sequenced
+data Sequence
     = Sequence !SeqNo [Gathering]
     deriving (Show, Eq, Data, Typeable, Generic)
 
@@ -50,7 +61,7 @@ data Page
     deriving (Show, Eq, Data, Typeable, Generic)
 
 data Signature
-    = SigLettered !Case !Int !Char
-    | SigNumbered !NumStyle !Int
-    | SigSymbol !T.Text
+    = SigLettered !Bool !Case !Int !Char
+    | SigNumbered !Bool !NumStyle !Int
+    | SigSymbol   !Bool !T.Text
     deriving (Show, Eq, Data, Typeable, Generic)

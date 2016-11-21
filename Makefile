@@ -10,7 +10,7 @@ stack.yaml:
 	stack init --prefer-nightly
 
 run: build
-	$(RUN) --help
+	$(RUN) --input collation-parser.cabal --output tmp/output
 
 docs:
 	stack haddock
@@ -52,13 +52,13 @@ build:
 	stack build $(BUILD_FLAGS)
 
 test:
-	stack test $(BUILD_FLAGS)
+	stack test $(BUILD_FLAGS) --test-arguments ""
 
 bench:
 	stack bench $(BUILD_FLAGS)
 
 watch:
-	stack build --file-watch --fast --pedantic
+	stack build --file-watch --fast --pedantic --exec "make run"
 
 watch-test:
 	stack build --file-watch --pedantic --exec "make test"

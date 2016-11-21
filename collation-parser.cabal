@@ -14,13 +14,17 @@ cabal-version:       >=1.10
 
 library
   exposed-modules:     CollationParser.Actions.Parse
+                     , CollationParser.Parser
                      , CollationParser.Types
   -- other-modules:
   -- other-extensions:
   build-depends:       base >=4.8 && <4.10
+                     , bytestring
                      , errors
+                     , parsers
                      , text
                      , text-format
+                     , trifecta
   hs-source-dirs:      src
   default-language:    Haskell2010
 
