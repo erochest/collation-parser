@@ -72,8 +72,8 @@ signature = do
     undefined
 
 bracketed :: Parser a -> Parser (Bool, a)
-bracketed p = char '[' *> (fmap (True,) p) <* char ']'
-bracketed p = fmap (False,) p
+bracketed p =   (char '[' *> (fmap (True,) p) <* char ']')
+            <|> fmap (False,) p
 
 -- signing statement: [\$1--2 (-D2) signed];
 -- leaf count: 12 leaves,
